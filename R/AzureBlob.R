@@ -321,7 +321,7 @@ azurePutBlob <- function(azureActiveContext, blob, contents = "", file = "",
     storageKey <- refreshStorageKey(azureActiveContext, storageAccount, resourceGroup)
   }
 
-  URL <- paste0("http://", storageAccount, ".blob.core.windows.net/", container, "/", blob)
+  URL <- paste0("https://", storageAccount, ".blob.core.windows.net/", container, "/", blob)
 
   r <- callAzureStorageApi(URL, verb = "PUT",
     headers = "x-ms-blob-type:Blockblob",
